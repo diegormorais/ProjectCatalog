@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using ProjectCatalog.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ProjectCatalogContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ProjectCatalogContext") ?? throw new InvalidOperationException("Connection string 'ProjectCatalogContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

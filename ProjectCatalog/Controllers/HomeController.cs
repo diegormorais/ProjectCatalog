@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjectCatalog.Models;
 using System.Diagnostics;
+using ProjectCatalog.Models.ViewModels;
 
 namespace ProjectCatalog.Controllers
 {
